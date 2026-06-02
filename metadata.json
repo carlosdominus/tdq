@@ -1,0 +1,6 @@
+{
+  "name": "Meu ProstaApp",
+  "description": "Aplicativo de saúde masculina focado no Protocolo do Quiabo para redução natural da próstata.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
