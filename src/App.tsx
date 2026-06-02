@@ -151,7 +151,7 @@ export default function App() {
                 required
                 value={nameInput}
                 onChange={(e) => setNameInput(e.target.value)}
-                placeholder="Ex primeiramente: Carlos"
+                placeholder="Ex primeiramente: João Antônio"
                 className="w-full h-14 px-4 border-2 border-slate-200 rounded-2xl text-[16px] font-bold text-[#1A1A2E] placeholder-slate-400 focus:outline-none focus:border-[#2A7FD4] bg-[#F4F6F9]/40 transition-colors"
                 maxLength={18}
               />

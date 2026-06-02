@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 import { ProgressEntry } from '../types';
 
-type ProfileScreen = 'menu' | 'nome' | 'registrar' | 'graficos' | 'suporte' | 'garantia';
+type ProfileScreen = 'menu' | 'nome' | 'registrar' | 'graficos' | 'garantia';
 
 export default function UserProfile() {
   const [userName, setUserName] = useState<string>('');
@@ -204,23 +204,6 @@ export default function UserProfile() {
                 </div>
               </div>
               <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-indigo-700 group-hover:translate-x-1 transition-all shrink-0" />
-            </button>
-
-            {/* Item 3: Falar com Suporte */}
-            <button
-              onClick={() => setCurrentScreen('suporte')}
-              className="w-full text-left p-5 hover:bg-slate-50 border-2 border-slate-150 hover:border-[#2A7FD4] rounded-2xl transition-all shadow-sm flex items-center justify-between gap-4 group cursor-pointer"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl shrink-0">
-                  💬
-                </div>
-                <div>
-                  <h4 className="font-black text-[#1A1A2E] text-lg leading-tight">Suporte do Dr. Haroldo</h4>
-                  <p className="text-xs text-[#555B6E] font-semibold mt-1">Atendimento humanizado direto no WhatsApp</p>
-                </div>
-              </div>
-              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-emerald-700 group-hover:translate-x-1 transition-all shrink-0" />
             </button>
 
             {/* Item 4: Garantia Blindada */}
@@ -499,48 +482,6 @@ export default function UserProfile() {
         </div>
       )}
 
-      {/* 4. SUPORTE DO DR HAROLDO */}
-      {currentScreen === 'suporte' && (
-        <div className="animate-fadeIn space-y-8 text-left">
-          <BackHeader title="Esclarecimentos & Suporte" />
-
-          {/* Banner */}
-          <div className="bg-[#E8F5EE] p-6 rounded-2xl border border-[#3DAA5C]/20 space-y-4">
-            <h4 className="font-black text-[#1A3F8B] text-xl flex items-center gap-2">
-              💬 Dúvidas sobre o tratamento?
-            </h4>
-            <p className="text-[15px] leading-relaxed text-[#555B6E] font-bold">
-              Tem alguma dúvida técnica ou pessoal sobre o preparo do quiabo, dosagem de pectina cítrica modificada, ou as instruções oficiais do Dr. Haroldo?
-            </p>
-            <p className="text-[14px] leading-relaxed text-slate-705 text-slate-700 font-semibold">
-              Nossa equipe dedicada de atendimento responde em poucos minutos no celular. Fale diretamente com urologistas em formação e auxiliares técnicos em saúde.
-            </p>
-
-            <div className="space-y-3.5 pt-3 text-[14px] text-slate-800 border-t border-slate-200/40">
-              <div className="flex items-center gap-2 font-black select-none">
-                <span className="text-emerald-600">🟢</span> Atendimento Via Celular: Seg à Dom, 8h às 20h
-              </div>
-              <div className="flex items-center gap-2 font-black select-none">
-                <span className="text-indigo-600">✉️</span> E-mail oficial: <code className="text-indigo-950 bg-white px-2 py-0.5 rounded border border-indigo-100 select-text">contato@dominus.site</code>
-              </div>
-            </div>
-          </div>
-
-          <div className="py-2">
-            <button
-              onClick={testWhatsAppSupport}
-              className="w-full h-16 rounded-2xl bg-[#3DAA5C] hover:bg-[#328e4b] font-black text-lg text-white uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center gap-2.5 shadow-md border-b-4 border-[#246b38]"
-            >
-              <PhoneCall className="w-5 h-5 stroke-[2.5]" /> Chamar no WhatsApp
-            </button>
-          </div>
-
-          <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-500 leading-relaxed font-semibold">
-            ✦ Caso seu WhatsApp do aparelho não abra automaticamente, você também pode nos contatar pelo canal de correio enviando sua mensagem com o CPF cadastrado.
-          </div>
-        </div>
-      )}
-
       {/* 5. GARANTIA BLINDADA 60 DIAS */}
       {currentScreen === 'garantia' && (
         <div className="animate-fadeIn space-y-8 text-left">
@@ -602,7 +543,7 @@ export default function UserProfile() {
                 onChange={(e) => setNameInput(e.target.value)}
                 className="w-full h-14 px-4 border-2 border-slate-200 focus:border-[#2A7FD4] rounded-2xl text-lg font-bold text-[#1A1A2E] bg-white focus:outline-none"
                 maxLength={18}
-                placeholder="Ex primeiramente: Carlos"
+                placeholder="Ex primeiramente: João Antônio"
               />
             </div>
 
