@@ -206,7 +206,7 @@ export default function SymptomChecker({ onScoreCalculated }: SymptomCheckerProp
               <div className="flex items-start gap-3">
                 <span className="text-3xl select-none">👨🏼‍⚕️</span>
                 <div>
-                  <h4 className="font-extrabold text-[#1A1A2E] text-base">Orientação do Dr. Haroldo</h4>
+                  <h4 className="font-extrabold text-[#1A1A2E] text-base">Orientação Clínico-Esportiva</h4>
                   <p className="text-sm text-[#555B6E] leading-relaxed mt-1.5 font-semibold">
                     {textDescription}
                   </p>

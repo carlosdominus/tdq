@@ -35,9 +35,9 @@ export default function Aprender() {
     {
       id: 3,
       icon: '🍋',
-      title: 'Para que serve a pectina cítrica?',
-      preview: 'O escudo invisível contra novos plásticos domésticos.',
-      content: 'O quiabo limpa o plástico acumulado ao longo de anos. Mas e o plástico novo que você acaba digerindo sem querer no dia seguinte? A Pectina Cítrica age como seu escudo de suporte permanente.\n\nAo se misturar com a baba, a Pectina entra nos tecidos e bloqueia a adesão de novos poluentes em suas glândulas prostáticas. Uma dupla blindagem: o quiabo limpa e dissolve o acúmulo histórico, e a pectina cítrica atua impedindo novos danos.'
+      title: 'Tudo sobre a Pectina Cítrica',
+      preview: 'O que é, onde encontrar e como preparar seu escudo em pó.',
+      content: '• O QUE É:\nA Pectina Cítrica é uma fibra natural solúvel extraída da casca branca e polpa de frutas cítricas (como laranjas, limões e maçãs). Quando misturada à baba líquida do quiabo, ela age como um potente escudo biológico de suporte na corrente sanguínea, sequestrando novas micropartículas de plásticos domésticos que você ingere no dia a dia antes que elas consigam se alojar no tecido esponjoso da próstata.\n\n• ONDE ENCONTRAR / COMPRAR:\n1. Lojas de produtos naturais de bairro ou zonas cerealistas de sua cidade (procure por "Pectina Cítrica em pó pura" ou grau alimentício).\n2. Farmácias de manipulação física ou online.\n3. Sites de comércio eletrônico confiáveis (como Mercado Livre, Shopee ou Amazon).\n\n• COMO PREPARAR E TOMAR:\n1. Pegue 100ml a 150ml da baba de quiabo coada e limpa (preparada de véspera).\n2. Adicione 1 colher de chá rasa (cerca de 3g a 5g) de Pectina Cítrica em pó purificada em temperatura ambiente.\n3. Misture vigorosamente com uma colher por 30 a 60 segundos até homogeneizar por completo.\n4. Beba logo pela manhã em jejum. Dica: segure na boca por 30 segundos sob a língua para uma absorção sublingual direta antes de engolir.\n\n• ALTERNATIVA CASEIRA RÁPIDA:\nCaso não encontre a pectina em pó pura imediatamente, você pode espremer o suco fresco de 1 laranja média ou limão inteiro (que contêm alta concentração de pectina cítrica de forma natural) diretamente na baba de quiabo coada e beber em jejum.'
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ export default function Aprender() {
       icon: '❓',
       title: 'Perguntas Frequentes & Respostas',
       preview: 'Dúvidas sobre o tratamento e preparação.',
-      content: 'P: Onde compro a Pectina Cítrica?\nR: Em qualquer loja de produtos naturais de bairro, zonas cerealistas, farmácias de manipulação ou pela internet (Mercado Livre, Shopee). Procure por "Pectina Cítrica em pó pura".\n\nP: Posso tomar mais de uma vez ao dia em jejum?\nR: Não se recomenda tomar duas doses. Respeite as orientações e horários do Dr. Haroldo para que o jato não aumente de forma descontrolada.\n\nP: Devo suspender as medicações prescritas?\nR: Nunca altere suas receitas médicas sem consulta. O quiabo é um alimento natural e complementa perfeitamente sua rotina sem efeitos colaterais nocivos.'
+      content: 'P: Onde compro a Pectina Cítrica?\nR: Conforme explicado no guia acima, você a encontra em pó em lojas de produtos naturais físicas, cerealistas, farmácias de manipulação ou na internet (Mercado Livre, Shopee). Se não tiver, use suco de laranja/limão fresco como substituto imediato.\n\nP: Posso tomar mais de uma vez ao dia em jejum?\nR: Não se recomenda tomar duas doses. Respeite as orientações recomendadas para que a desobstrução e relaxamento muscular ocorram de forma equilibrada e gradual.\n\nP: Devo suspender as medicações prescritas?\nR: Nunca altere suas receitas médicas sem consulta. O quiabo é um alimento natural e complementa perfeitamente sua rotina sem efeitos colaterais nocivos.'
     }
   ];
 
@@ -122,7 +122,7 @@ export default function Aprender() {
       <div className="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100 flex gap-2.5 items-start text-xs text-[#555B6E] font-semibold">
         <AlertCircle className="w-4 h-4 shrink-0 text-amber-600 mt-0.5" />
         <p>
-          As lições acima foram revisadas pelo <strong>Dr. Haroldo Vasconcelos</strong> e representam o estado da arte do protocolo prático do quiabo na desobstrução prostática natural.
+          As lições acima foram revisadas por nossa <strong>equipe de urologistas e especialistas em saúde integrativa</strong> e representam o estado da arte do protocolo prático do quiabo na desobstrução prostática natural.
         </p>
       </div>
 

@@ -493,7 +493,7 @@ export default function UserProfile() {
                 🛡️ Proteção de Compra de 60 Dias
               </h4>
               <p className="text-[15px] text-[#555B6E] leading-relaxed font-bold">
-                A metodologia científica do Dr. Haroldo e o uso regulamentar do <strong>Meu ProstaApp</strong> são amparados por uma garantia integral incondicional de 2 meses.
+                A metodologia científica do protocolo e o uso regulamentar do <strong>Meu ProstaApp</strong> são amparados por uma garantia integral incondicional de 2 meses.
               </p>
               
               <div className="p-4 bg-white rounded-xl border border-[#2A7FD4]/10 text-sm text-slate-600 space-y-3 leading-relaxed font-semibold">
@@ -529,7 +529,7 @@ export default function UserProfile() {
 
           <div className="space-y-6">
             <p className="text-md leading-relaxed text-[#555B6E] font-semibold">
-              Digite seu primeiro nome abaixo. Isso ajustará a forma com que Dr. Haroldo guiará seus relatórios e saudações integradas.
+              Digite seu primeiro nome abaixo. Isso ajustará a forma com que o sistema guiará seus relatórios e saudações integradas.
             </p>
 
             <div className="space-y-2">

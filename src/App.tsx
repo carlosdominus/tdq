@@ -137,7 +137,7 @@ export default function App() {
             Meu ProstaApp
           </h2>
           <p className="text-[15px] font-semibold text-[#555B6E] leading-relaxed mb-6 max-w-xs mx-auto">
-            Por favor, nos informe seu nome para que o aplicativo possa personalizar o protocolo de desobstrução prostática do Dr. Haroldo.
+            Por favor, nos informe seu nome para que o aplicativo possa personalizar o seu protocolo de desobstrução prostática.
           </p>
 
           <form onSubmit={handleOnboardingSubmit} className="space-y-4">

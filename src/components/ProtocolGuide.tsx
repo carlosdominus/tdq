@@ -10,6 +10,7 @@ import { Clock, Shield, Check, ChevronRight, HelpCircle, AlertTriangle } from 'l
 export default function ProtocolGuide() {
   const [activeStep, setActiveStep] = useState<number>(0);
   const [userName, setUserName] = useState('José');
+  const [pectinTab, setPectinTab] = useState<'oque' | 'onde' | 'preparo'>('oque');
 
   useEffect(() => {
     const storedName = localStorage.getItem('mpa_user_name') || 'Membro';
@@ -46,7 +47,7 @@ export default function ProtocolGuide() {
           </div>
           <div>
             <h3 className="font-extrabold text-[#1A1A2E] text-lg leading-tight">Guia do Preparo Diário</h3>
-            <p className="text-xs text-[#555B6E] font-semibold mt-0.5">Siga o passo a passo com o Dr. Haroldo</p>
+            <p className="text-xs text-[#555B6E] font-semibold mt-0.5">Siga o passo a passo do Protocolo</p>
           </div>
         </div>
 
@@ -74,7 +75,7 @@ export default function ProtocolGuide() {
               Seu Protocolo Diário do Quiabo
             </h4>
             <p className="text-sm md:text-base leading-relaxed text-[#555B6E] text-center font-semibold">
-              Este é o seu roteiro prático diário. São apenas <strong className="text-emerald-600">3 passos simples</strong> recomendados pelo Dr. Haroldo. Faça toda manhã, em jejum, antes do seu café da manhã. Leva menos de 5 minutos!
+              Este é o seu roteiro prático diário. São apenas <strong className="text-emerald-600">3 passos simples</strong> recomendados por especialistas. Faça toda manhã, em jejum, antes do seu café da manhã. Leva menos de 5 minutos!
             </p>
 
             <div className="p-4 bg-[#EAF3FB]/50 rounded-xl border border-[#2A7FD4]/10 text-xs text-[#555B6E] leading-relaxed flex gap-2.5 items-start font-semibold">
@@ -133,7 +134,7 @@ export default function ProtocolGuide() {
             </div>
 
             <div className="p-4 bg-[#EAF3FB]/30 rounded-xl border border-[#2A7FD4]/10 text-xs text-slate-700 leading-relaxed font-semibold italic">
-              ✨ <strong>Dica do Dr. Haroldo:</strong> "A baba do quiabo funciona como um ímã biológico que gruda e arrasta microplásticos alojados no tecido esponjoso da sua uretra."
+              ✨ <strong>Dica do Especialista:</strong> "A baba do quiabo funciona como um ímã biológico que gruda e arrasta microplásticos alojados no tecido esponjoso da sua uretra."
             </div>
 
             <button
@@ -179,6 +180,50 @@ export default function ProtocolGuide() {
                   <li>Mexa bem com uma colher por 30 segundos até dissolver por completo.</li>
                   <li>O líquido ficará ligeiramente mais consistente.</li>
                 </ol>
+              </div>
+            </div>
+
+            {/* Guia Informativo Interativo sobre a Pectina */}
+            <div className="bg-[#F8FAFC] border border-slate-200 rounded-xl p-4 space-y-3">
+              <h5 className="font-extrabold text-[#1A1A2E] text-xs uppercase tracking-wider flex items-center gap-1.5 select-none">
+                💡 Entender a Pectina Cítrica
+              </h5>
+              
+              <div className="grid grid-cols-3 gap-1 pt-1">
+                {(['oque', 'onde', 'preparo'] as const).map((tab) => (
+                  <button
+                    key={tab}
+                    type="button"
+                    onClick={() => setPectinTab(tab)}
+                    className={`text-center py-2 px-1 rounded-lg text-[11px] font-black tracking-tight transition-all cursor-pointer ${
+                      pectinTab === tab
+                        ? 'bg-[#1A3F8B] text-white shadow-sm'
+                        : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+                    }`}
+                  >
+                    {tab === 'oque' && 'O que é?'}
+                    {tab === 'onde' && 'Onde achar?'}
+                    {tab === 'preparo' && 'Como preparar?'}
+                  </button>
+                ))}
+              </div>
+
+              <div className="text-xs text-[#555B6E] leading-relaxed font-semibold bg-white p-3 rounded-lg border border-slate-100 min-h-[64px] flex items-center transition-all duration-250 animate-fadeIn">
+                {pectinTab === 'oque' && (
+                  <p>
+                    A <strong className="text-slate-900 font-extrabold">Pectina Cítrica</strong> é uma fibra solúvel extraída da casca de frutas. Ao misturá-la com a baba de quiabo, ela serve como um <strong className="text-emerald-700 font-extrabold">escudo invisível</strong> contra novos plásticos domésticos diários.
+                  </p>
+                )}
+                {pectinTab === 'onde' && (
+                  <p>
+                    Compre no <strong className="text-indigo-900 font-extrabold">Mercado Livre, Shopee, ou lojas de produtos naturais</strong> (zonas cerealistas e farmácias de manipulação). Procure por <code className="bg-slate-100 px-1 py-0.5 rounded text-indigo-950 font-mono text-[10px]">Pectina Cítrica em Pó Pura</code>.
+                  </p>
+                )}
+                {pectinTab === 'preparo' && (
+                  <p>
+                    <strong className="text-[#2A7FD4] font-extrabold">SUBSTITUTO RÁPIDO:</strong> Se não conseguir o pó pura hoje, use <strong className="text-indigo-950 font-extrabold">suco espremido de 1 limão fresco ou 1 laranja</strong> diretamente na baba de quiabo. Funciona muito bem!
+                  </p>
+                )}
               </div>
             </div>
 
@@ -279,7 +324,7 @@ export default function ProtocolGuide() {
             </div>
 
             <div className="p-4 bg-slate-50 border border-slate-100 rounded-xl text-xs text-slate-500 font-medium">
-              Não tome mais de uma dose por dia. Consistência é o único segredo do Dr. Haroldo.
+              Não tome mais de uma dose por dia. Consistência é a chave de sucesso do protocolo.
             </div>
 
             <button
