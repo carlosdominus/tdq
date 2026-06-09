@@ -32,7 +32,8 @@ import Aprender from './components/Aprender';
 import { SymptomScore, ProgressEntry } from './types';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'home' | 'protocolo' | 'aprender' | 'perfil' | 'sintomas'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'protocolo' | 'aprender' | 'perfil' | 'sintomas' | 'vpower'>('home');
+  const [showUpsell, setShowUpsell] = useState(false);
   const [userName, setUserName] = useState<string | null>(null);
   const [isOnboarded, setIsOnboarded] = useState(false);
   const [nameInput, setNameInput] = useState('');
@@ -91,6 +92,15 @@ export default function App() {
       window.removeEventListener('storage', syncLocalStorageData);
     };
   }, []);
+
+  useEffect(() => {
+    if (isOnboarded) {
+      const upsellShown = localStorage.getItem('mpa_upsell_shown');
+      if (!upsellShown) {
+        setShowUpsell(true);
+      }
+    }
+  }, [isOnboarded]);
 
   const handleOnboardingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -403,11 +413,30 @@ export default function App() {
               <SymptomChecker onScoreCalculated={() => {}} />
             </motion.div>
           )}
+
+          {activeTab === 'vpower' && (
+            <motion.div
+              key="vpower-module"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.15 }}
+              className="-mx-4 -my-5 h-[calc(100vh-120px)] flex flex-col overflow-hidden"
+              id="vpower-iframe-container"
+            >
+              <iframe
+                src="https://tudoprahoje.site/tdq/vpower/menu-inferior/"
+                className="w-full h-full border-none flex-1 bg-white"
+                title="V-Power"
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+              />
+            </motion.div>
+          )}
         </AnimatePresence>
 
       </main>
 
-      {/* Primary Bottom Navigation - 3 Simple tabs for senior citizens */}
+      {/* Primary Bottom Navigation - 4 Simple tabs for senior citizens */}
       <footer className="bg-white border-t border-slate-200 py-3 fixed bottom-0 left-0 right-0 z-40 shadow-xl block">
         <div className="max-w-md mx-auto px-4 flex justify-between gap-1 text-center select-none">
           
@@ -441,8 +470,43 @@ export default function App() {
             <span className="text-[12px] mt-1 font-bold">Aprender</span>
           </button>
 
+          <button
+            onClick={() => setActiveTab('vpower')}
+            className={`flex flex-col items-center flex-1 cursor-pointer transition-all ${
+              activeTab === 'vpower' ? 'text-amber-600 scale-105 font-black' : 'text-slate-400 hover:text-slate-600 font-semibold'
+            }`}
+            id="vpower-nav-tab"
+          >
+            <Sparkles className={`w-6 h-6 stroke-[2.3] ${activeTab === 'vpower' ? 'fill-amber-400 stroke-amber-600 text-amber-600' : ''}`} />
+            <span className="text-[12px] mt-1 font-bold">V-Power</span>
+          </button>
+
         </div>
       </footer>
+
+      {/* Upsell First Access Overlay */}
+      {showUpsell && (
+        <div className="fixed inset-0 bg-black/90 z-[9999] flex flex-col" id="upsell-modal-container">
+          <button
+            onClick={() => {
+              localStorage.setItem('mpa_upsell_shown', 'true');
+              setShowUpsell(false);
+            }}
+            className="absolute top-4 right-4 text-white hover:text-gray-300 text-3xl font-bold cursor-pointer w-12 h-12 flex items-center justify-center rounded-full z-[10000] select-none hover:bg-white/10 transition-colors focus:outline-none"
+            id="close-upsell-btn"
+            aria-label="Fechar"
+            style={{ textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}
+          >
+            ✕
+          </button>
+          <iframe
+            src="https://tudoprahoje.site/tdq/vpower/front"
+            className="w-full h-full border-none flex-1"
+            title="Acesso V-Power"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          />
+        </div>
+      )}
     </div>
   );
 }
